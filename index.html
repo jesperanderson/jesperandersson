@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesper Andersson</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>JESPER ANDERSSON</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <section class="intro">
+        <h1>Hi, I’m Jesper</h1>
+        <p>I create modern, responsive websites that help businesses stand out online.</p>
+    </section>
+    
+    <section class="section" id="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <div class="project-item" onclick="openModal('Project 1', 'This is a detailed description of Project 1.', 'https://via.placeholder.com/600x400')">
+                <img src="https://via.placeholder.com/280x180" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Short description of Project 1.</p>
+            </div>
+            <div class="project-item" onclick="openModal('Project 2', 'This is a detailed description of Project 2.', 'https://via.placeholder.com/600x400')">
+                <img src="https://via.placeholder.com/280x180" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Short description of Project 2.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <h3 id="modalTitle"></h3>
+            <img id="modalImage" src="" alt="">
+            <p id="modalDescription"></p>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <section class="section" id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        function openModal(title, description, image) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('modalImage').src = image;
+            document.getElementById('projectModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 jesperandersson. Built with passion.</p>
+    </footer>
+</html>
