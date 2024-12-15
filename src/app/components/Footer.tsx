@@ -2,7 +2,7 @@
 export default function Footer() {
     return (
       <footer>
-        <p>&copy; {new Date().getFullYear()} My Portfolio. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} jesperandersson. All Rights Reserved.</p>
       </footer>
     );
   }

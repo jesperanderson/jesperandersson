@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import './styles/globals.css'; 
+import Footer from './components/Footer';
 
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -48,9 +49,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </nav>
           </header>
           <main>{children}</main>
-          <footer>
-            <p>© 2024 My Website</p>
-          </footer>
+          
+            <Footer/>
+          
         </body>
       </html>
     </>

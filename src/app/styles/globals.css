@@ -20,47 +20,51 @@ a {
   color: inherit;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  margin: 0;
+h1 {
+  font-size: 24px;
+  font-weight: bold;
 }
-/* Remove list item dots */
-ul, ol {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-/* Optional: Remove any padding or margin from list items */
-li {
-  margin: 0;
-  padding: 0;
-}
-/* Container to center content */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 
 /* Header Styles */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 5px;
   border-bottom: 1px solid #eee;
+  background-color: #fff;
 }
 
 header h1 {
   font-size: 24px;
   font-weight: bold;
+  color: #333;
 }
 
+/* Navigation Styles */
 header .nav {
   display: flex;
   gap: 20px;
+}
+
+header .nav ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+header .nav a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+header .nav a:hover {
+  color: #ff5733;
 }
 
 /* Hamburger Menu Styles */
@@ -77,46 +81,23 @@ header .nav {
   background-color: #333;
 }
 
-/* Navigation styles */
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav.active {
-  display: block;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  width: 200px;
-}
-
-.nav a {
-  padding: 10px;
-  display: block;
-}
-
 /* Active state for hamburger */
 .hamburger.active div {
-  background-color: #ff5733; /* Change color when active */
+  background-color: #ff5733;
 }
 
-/* Mobile styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
   header .nav {
-    display: none;
+    display: none; /* Hide nav on mobile by default */
   }
 
   header .hamburger {
-    display: flex;
+    display: flex; /* Show hamburger menu on mobile */
   }
 
-  .nav.active {
-    display: block;
+  header .nav.active {
+    display: block; /* Show the nav when hamburger is clicked */
     position: absolute;
     top: 70px;
     right: 20px;
@@ -127,17 +108,11 @@ header .nav {
     width: 200px;
   }
 
-  .nav a {
-    padding: 10px;
-    display: block;
+  header .nav a {
+    font-size: 18px;
+    padding: 12px;
+    display: block; /* Make the links block-level for easier clicking on mobile */
   }
-}
-
-/* Footer Styles */
-footer {
-  padding: 20px;
-  border-top: 1px solid #eee;
-  text-align: center;
 }
 
 /* Store Section Styles */
@@ -187,12 +162,12 @@ footer {
 .store-card .price {
   font-size: 20px;
   font-weight: bold;
-  color: #ff5733;
+  color: #101010;
   margin: 15px 0;
 }
 
 .store-card button {
-  background-color: #28a745;
+  background-color: #014ba1;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -203,7 +178,7 @@ footer {
 }
 
 .store-card button:hover {
-  background-color: #218838;
+  background-color: #014ba1;
 }
 
 /* Store Section - Responsive Styles */
@@ -218,18 +193,51 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-
 /* Desktop Styles */
 @media (min-width: 769px) {
   header .nav {
-    display: flex;
+    display: flex; /* Ensure nav is displayed as a row on desktop */
+    justify-content: flex-start; /* Align items to the left */
   }
 
-  .hamburger {
-    display: none;
+  header .hamburger {
+    display: none; /* Hide the hamburger menu on desktop */
+  }
+
+  header .nav a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+  /* Ensure the navigation links are spaced properly on desktop */
+  header .nav ul {
+    display: flex;
+    gap: 20px;
   }
 }
 
+/* Container to center content */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Remove list item dots */
+ul, ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Optional: Remove any padding or margin from list items */
+li {
+  margin: 0;
+  padding: 0;
+}
 /* Contact Form Section */
 .contact-section {
   margin-top: 40px;
@@ -299,4 +307,15 @@ footer {
 /* Button Hover Effect */
 .contact-form button:hover {
   background-color: #014ba1;
+}
+
+/* Footer Styles */
+footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  text-align: center; /* Centers the content horizontally */
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically if the footer has height */
+  height: 100px; /* Adjust the height as needed */
 }
