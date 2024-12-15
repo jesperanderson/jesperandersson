@@ -1,4 +1,3 @@
-// src/app/contact/page.tsx
 'use client';
 
 import { useState } from 'react';
@@ -15,16 +14,14 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add functionality to send form data to your email or API
-    alert('Form submitted!');
-  };
-
   return (
     <div className="contact-section">
       <h2>Contact Me</h2>
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <form
+        action="https://formspree.io/f/movqzzzr" // Correct Formspree endpoint
+        method="POST"
+        className="contact-form"
+      >
         <div>
           <label htmlFor="name">Name:</label>
           <input
