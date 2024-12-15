@@ -10,7 +10,6 @@ export default function Contact() {
     message: ''
   });
 
-  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -23,9 +22,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="container">
+    <div className="contact-section">
       <h2>Contact Me</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="contact-form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
           <input

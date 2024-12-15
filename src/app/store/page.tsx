@@ -1,23 +1,37 @@
 // src/app/store/page.tsx
-export default function Store() {
-    return (
-      <div className="container">
-        <h2>My Website Templates</h2>
-        <p>Here you can order the templates I have designed for websites. Please select the one that suits your needs.</p>
-        <ul>
-          <li>
-            <h3>Template 1</h3>
-            <p>Price: $199</p>
-            <p>Beautiful and minimalistic design, perfect for small businesses.</p>
-          </li>
-          <li>
-            <h3>Template 2</h3>
-            <p>Price: $299</p>
-            <p>Responsive design with enhanced functionality for e-commerce.</p>
-          </li>
-        </ul>
-        <p>If you need custom features, feel free to reach out to me directly via the contact page!</p>
-      </div>
-    );
-  }
-  
+const storeItems = [
+  {
+    title: 'Website Template 1',
+    description: 'A clean and modern design perfect for startups.',
+    price: '$199',
+    imageUrl: '/images/template1.jpg',
+  },
+  {
+    title: 'Website Template 2',
+    description: 'A professional template with e-commerce support.',
+    price: '$299',
+    imageUrl: '/images/template2.jpg',
+  },
+  {
+    title: 'Website Template 3',
+    description: 'A minimalist design with focus on content.',
+    price: '$149',
+    imageUrl: '/images/template3.jpg',
+  },
+];
+
+export default function StoreSection() {
+  return (
+    <section className="store-section">
+      {storeItems.map((item, index) => (
+        <div key={index} className="store-card">
+          <img src={item.imageUrl} alt={item.title} />
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+          <p className="price">{item.price}</p>
+          <button>Order Now</button>
+        </div>
+      ))}
+    </section>
+  );
+}
