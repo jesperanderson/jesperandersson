@@ -1,0 +1,115 @@
+/* src/styles/globals.css */
+
+/* Reset styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and overall styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Container to center content */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Minimalistic header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header .nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+}
+
+/* Minimalistic footer */
+footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+/* Mobile first styles */
+@media (max-width: 768px) {
+  header .nav {
+    display: none;
+  }
+
+  header .hamburger {
+    display: flex;
+  }
+
+  .nav.active {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 200px;
+  }
+
+  .nav a {
+    padding: 10px;
+    display: block;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  header .nav {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
